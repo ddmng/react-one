@@ -1,25 +1,51 @@
-import React, { Component } from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { Component } from "react";
+import "./App.css";
+import Pet from "./Pet";
 
 class App extends Component {
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      name: "",
+      list: [{ name: "fuffi", id: 1 }, { name: "lillo", id: 2 }]
+    };
+  }
+
+  addPet = () => {
+    console.log("addPet");
+    this.setState({
+      name: "",
+      list: [
+        ...this.state.list,
+        {
+          name: this.state.name,
+          id: this.state.name
+        }
+      ]
+    });
+  };
+
+  updateName = event => {
+    console.log("updateName");
+    this.setState({
+      name: event.target.value
+    });
+  };
+
   render() {
     return (
       <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-        </header>
+        <input type="text" onChange={this.updateName} value={this.state.name} />
+        <button onClick={this.addPet}>Add a new pet!</button>
+        {this.state.list.map(p => (
+          <Pet name={p.name} key={p.id} />
+        ))}
+        <div>
+          <pre>
+            <code>{JSON.stringify(this.state, null, 4)}</code>
+          </pre>
+        </div>
       </div>
     );
   }
