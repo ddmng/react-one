@@ -16,7 +16,7 @@ class Results extends Component {
                             location={p.location}
                             breed={p.breed}
                         />
-                        <button onClick={this.props.deleteClick(p.id)}>x</button>
+                        <button onClick={this.props.handleDeleteClick(p.id)}>x</button>
                     </div>
                 ))}
             </div>

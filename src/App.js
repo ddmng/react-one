@@ -6,7 +6,6 @@ import Details from "./Details";
 import Filter from "./Filter";
 import Add from "./Add";
 
-
 const initialState = {
   name: "",
   filter: "",
@@ -34,7 +33,7 @@ class App extends Component {
     this.state = initialState
   }
 
-  addPet = () => {
+  handleAddClick = () => {
     console.log("addPet");
     this.setState({
       name: "",
@@ -48,14 +47,14 @@ class App extends Component {
     });
   };
 
-  updateName = event => {
+  handleNameChange = event => {
     console.log("updateName");
     this.setState({
       name: event.target.value
     });
   };
 
-  deleteClick = (id) => () => {
+  handleDeleteClick = (id) => () => {
     console.log('Delete: ', id)
     this.setState({
       list: this.state.list.filter(el => el.id !== id)
@@ -76,17 +75,17 @@ class App extends Component {
           <h1>Adopt me!</h1>
         </Link>
 
-        <Add updateName={this.updateName} addPet={this.addPet} name={this.state.name} />
+        <Add handleNameChange={this.handleNameChange} handleAddClick={this.handleAddClick} name={this.state.name} />
 
         <Filter handleFilterChange={this.handleFilterChange} />
 
         <Router>
           <Results path="/"
             pets={this.state.list}
-            deleteClick={this.deleteClick}
+            handleDeleteClick={this.handleDeleteClick}
             filter={this.state.filter}
           />
-          <Details path="/details/:id" />
+          <Details path="/details/:id" pets={this.state.list} />
         </Router>
 
         <div>
