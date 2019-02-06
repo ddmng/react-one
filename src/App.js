@@ -1,6 +1,8 @@
 import React, { Component } from "react";
 import "./App.css";
-import Pet from "./Pet";
+import Results from "./Results";
+import { Router } from "@reach/router"
+import Details from "./Details";
 
 class App extends Component {
   constructor(props) {
@@ -8,7 +10,21 @@ class App extends Component {
 
     this.state = {
       name: "",
-      list: [{ name: "fuffi", id: 1 }, { name: "lillo", id: 2 }]
+      list: [{
+        name: "fuffi",
+        id: 1,
+        media: 'media',
+        location: 'Italy',
+        breed: 'doberman',
+        animal: 'dog'
+      }, {
+        name: "lillo",
+        id: 2,
+        media: 'media',
+        location: 'Italy',
+        breed: 'siamese',
+        animal: 'cat'
+      }]
     };
   }
 
@@ -38,9 +54,12 @@ class App extends Component {
       <div className="App">
         <input type="text" onChange={this.updateName} value={this.state.name} />
         <button onClick={this.addPet}>Add a new pet!</button>
-        {this.state.list.map(p => (
-          <Pet name={p.name} key={p.id} />
-        ))}
+
+        <Router>
+          <Results path="/"/>
+          <Details path="/details/:id"/>
+        </Router>
+
         <div>
           <pre>
             <code>{JSON.stringify(this.state, null, 4)}</code>

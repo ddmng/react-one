@@ -30,3 +30,11 @@
     transform: rotate(360deg);
   }
 }
+
+.pets {
+  display: flex;
+}
+.pet {
+  background-color: #61dafb;
+  margin: 1em;
+}
