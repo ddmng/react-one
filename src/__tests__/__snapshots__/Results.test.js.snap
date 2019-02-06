@@ -1,0 +1,80 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Results matches the saved snapshot 1`] = `
+<div
+  className="pets"
+>
+  <div>
+    <div
+      className="pet"
+    >
+      <a
+        href="/details/1"
+        onClick={[Function]}
+      >
+        <h1>
+          Nome: 
+          fuffi
+        </h1>
+      </a>
+      <h4>
+         -  
+        dog
+      </h4>
+      <h4>
+         -  
+        doberman
+      </h4>
+      <h4>
+         -  
+        media
+      </h4>
+      <h4>
+         -  
+        Italy
+      </h4>
+    </div>
+    <button
+      onClick={[Function]}
+    >
+      x
+    </button>
+  </div>
+  <div>
+    <div
+      className="pet"
+    >
+      <a
+        href="/details/2"
+        onClick={[Function]}
+      >
+        <h1>
+          Nome: 
+          lillo
+        </h1>
+      </a>
+      <h4>
+         -  
+        cat
+      </h4>
+      <h4>
+         -  
+        siamese
+      </h4>
+      <h4>
+         -  
+        media
+      </h4>
+      <h4>
+         -  
+        Italy
+      </h4>
+    </div>
+    <button
+      onClick={[Function]}
+    >
+      x
+    </button>
+  </div>
+</div>
+`;
