@@ -37,4 +37,5 @@
 .pet {
   background-color: #61dafb;
   margin: 1em;
+  border: 1px black solid;
 }

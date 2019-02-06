@@ -1,5 +1,5 @@
 import React from "react";
-import {Link} from "@reach/router"
+import { Link } from "@reach/router"
 
 class Pet extends React.Component {
 
@@ -7,13 +7,15 @@ class Pet extends React.Component {
     const { id, name, animal, breed, media, location } = this.props;
 
     return (
-      <Link to={`/details/${id}`} className="pet">
-        <h1>Nome: {name}</h1>
-        <h2> -  {animal}</h2>
-        <h2> -  {breed}</h2>
-        <h2> -  {media}</h2>
-        <h3> -  {location}</h3>
-      </Link>
+      <div className="pet">
+        <Link to={`/details/${id}`} >
+          <h1>Nome: {name}</h1>
+        </Link>
+        <h4> -  {animal}</h4>
+        <h4> -  {breed}</h4>
+        <h4> -  {media}</h4>
+        <h4> -  {location}</h4>
+      </div>
     )
   }
 }
